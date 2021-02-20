@@ -1,0 +1,31 @@
+Package: FinancialsR
+Type: Package
+Title: Extract and tidy SEC corporate financial data for analysis
+Version: 0.0.0.9000
+Authors@R: 
+    person(given  = "Logan", 
+           family = "Stundal",
+           email  = "logan.stundal@gmail.com", 
+           role   = c("aut", "cre"))
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: Connects to SEC's EDGAR database to extract financial filings
+    returning a tidied dataframe for convenient analysis in R.
+URL: https://github.com/loganstundal/financialsR
+BugReports: https://github.com/loganstundal/financialsR/issues
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports:
+  cowplot,
+  dplyr,
+  httr,
+  lubridate,
+  magrittr,
+  RCurl,
+  rvest,
+  stringr,
+  tidyquant,
+  XBRL,
+  XML,
+  xml2
+RoxygenNote: 7.1.1
