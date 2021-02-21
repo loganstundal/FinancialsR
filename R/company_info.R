@@ -15,6 +15,7 @@
 #'
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_nodes html_text
+#' @importFrom magrittr "%>%"
 #'
 #' @examples
 #' company_info("tsla")
@@ -33,7 +34,7 @@ company_info <- function(symbol){
   search.result = xml2::read_html(target_url)
 
   ExtractInfo   = function(html.node) {
-    info = search.result %>% html_nodes(html.node) %>% html_text()
+    info = search.result %>% rvest::html_nodes(html.node) %>% rvest::html_text()
     return(info)
   }
   company.name.raw = ExtractInfo(".companyName") %>% strsplit(" CIK")

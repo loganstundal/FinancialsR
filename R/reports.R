@@ -1,7 +1,35 @@
+#' Retrieve corporate filings from SEC
+#'
+#' \code{reports} does xyz
+#'
+#' @importFrom xml2 read_html
+#' @importFrom rvest html_nodes html_text
+#' @importFrom magrittr "%>%"
+#'
+#' @param company Company stock ticker entered as a string (e.g., "tsla")
+#' @param type Report filing type from the SEC. Options include the following:
+#'   10-K, 10-Q, 10-K/A, 10-Q/A, 10, 8-K, any.
+#' @param prior_to Prior to exclusion date entered as a string in the following
+#'   format: YYYYMMDD
+#' @param exclude_amended Boolean to excluded amended filing results.
+#' @param limit_results Numeric value indicating the limit on returned results.
+#'   Must be one of: 10, 20, 40, 80, or 100.
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' reports("tsla")
+
+
+
 # reports
 
 # This function returns a dataframe containing report information from the SEC
 # for a given company based on user inputs.
+
+
+
 
 reports <- function(company,
                     type     = "any",
@@ -34,7 +62,7 @@ reports <- function(company,
   # Collect filed reports
   filings     = xml2::read_html(target)
   ExtractInfo = function(html.node) {
-    info = filings %>% html_nodes(html.node) %>% html_text()
+    info = filings %>% rvest::html_nodes(html.node) %>% rvest::html_text()
     return(info)
     }
 
