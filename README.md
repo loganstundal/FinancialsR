@@ -15,15 +15,11 @@ health.
 
 ## Installation
 
-\#&gt; You can install the released version of FinancialsR from
-[CRAN](https://CRAN.R-project.org) with:
-
 You can install a working version of FinancialsR its
-[GitHub](https::github.com/loganstunda/financialsR) repository with:
+[GitHub](https::github.com/loganstundal/financialsR) repository with:
 
 ``` r
-devtools::install_github("loganstunda/FinancialsR")
-install.packages("FinancialsR")
+devtools::install_github("loganstundal/FinancialsR")
 ```
 
 ## Example
